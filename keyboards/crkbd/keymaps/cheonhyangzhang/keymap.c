@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
       LGUI(KC_TAB), LGUI(KC_A), KC_TAB, LGUI(KC_K), LGUI(KC_F), LGUI(KC_L),            KC_ASTR, LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, LGUI(KC_ENTER),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LGUI(KC_GRAVE), LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C), LGUI_T(KC_C), TD(CMD_V_SHIFT),    KC_BSPC, KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_NO,
+      LGUI(KC_GRAVE), LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C), LGUI(KC_C), TD(CMD_V_SHIFT),    KC_BSPC, KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
                   KC_NO, KC_NO, KC_TRNS, LGUI(KC_SPC), KC_NO, KC_NO
                   //`--------------------------'  `----------------------'
