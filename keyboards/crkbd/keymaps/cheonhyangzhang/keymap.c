@@ -32,9 +32,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO, KC_ESC, LGUI(KC_W), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),             KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_PIPE, KC_NO,
+      KC_NO, KC_NO, LGUI(KC_W), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),             KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_PIPE, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LGUI(KC_TAB), LGUI(KC_A), KC_TAB, LGUI(KC_K), LGUI(KC_F), LGUI(KC_L),            KC_ASTR, LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, LGUI(KC_ENTER),
+      LGUI(KC_TAB), LGUI(KC_A), KC_TAB, KC_ESC, LGUI(KC_F), LGUI(KC_K),            KC_ASTR, LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, LGUI(KC_ENTER),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
       LGUI(KC_GRAVE), LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C), LGUI(KC_C), TD(CMD_V_SHIFT),    KC_BSPC, KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
