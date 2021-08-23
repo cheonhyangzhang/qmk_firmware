@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-       KC_NO, KC_1, KC_2, KC_3, KC_4, KC_5,     LGUI(KC_GRV), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO,
+       KC_NO, KC_NO, KC_2, KC_3, KC_4, KC_5,     LGUI(KC_GRV), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-       KC_NO, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,  KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, LGUI(KC_Y), LGUI(LSFT(KC_4)),
+       KC_1, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,  KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, LGUI(KC_Y), LGUI(LSFT(KC_4)),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
        KC_NO, LGUI(KC_1), KC_NO, KC_NO, KC_TILD, KC_GRV,    LALT(KC_BSPACE), LALT(KC_LEFT), LGUI(KC_I), LALT(KC_RGHT), KC_END, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------.    ,--------------------------------------------|
       KC_NO, LGUI(KC_A), LGUI(KC_W), KC_BSPC, KC_TAB, KC_NO,     KC_NO, LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
+      LGUI(KC_A), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
       KC_NO, LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       KC_X, KC_NO, KC_NO, KC_NO, TO(0), KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
