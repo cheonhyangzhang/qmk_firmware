@@ -6,7 +6,95 @@
  * edit it directly.
  */
 
+// tap dance section start
+  enum tap_dance_codes {
+    DANCE_0,
+    I_QUOT,
+    O_LSFT_QUOT,
+    SLASH_RSHIFT,
+    CMD_T_SFT,
+    CMD_V_SHIFT,
+    MINUS_UNDERSCORE,
+    EQUAL_PLUS,
+    A_CTL,
+    Z_SFT,
+    SLACK_ADDRESS,
+  };
+  // tap dance section end
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+  [0] = LAYOUT_split_3x6_3(
+    //,--------------------------------------.            ,--------------------------------------------|
+        KC_NO,  KC_Q,  KC_W, KC_E, KC_R, KC_T,          KC_Y, KC_U, TD(I_QUOT),    TD(O_LSFT_QUOT),   KC_P,    KC_NO,
+    //|--------+--------+--------+--------+---------|     |--------+--------+--------+--------+--------|
+        KC_Q, TD(A_CTL), KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_ENT,  KC_P,
+    //|--------+--------+--------+--------+---------|     |--------+--------+--------+--------+--------|
+        KC_LGUI, TD(Z_SFT), KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, TD(SLASH_RSHIFT), TO(4),
+    //|--------+--------+--------+--------+---------|     |--------+--------+--------+--------+--------|
+                            MO(3),   KC_LSFT,  MO(1),     KC_SPC,   MO(2), TO(5)
+                            //`--------------------------'  `----------------------'
+
+  [1] = LAYOUT_split_3x6_3(
+    //,--------------------------------------.    ,--------------------------------------------|
+        KC_NO, KC_NO, LGUI(KC_W), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),             KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_PIPE, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        LGUI(KC_TAB), LGUI(KC_A), KC_TAB, LGUI(KC_F), KC_ESC, TD(SLACK_ADDRESS),            KC_ASTR, LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_PIPE,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        LGUI(KC_GRAVE), LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C), LGUI(KC_C), LGUI(KC_V),    KC_BSPC, KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+                    KC_NO, KC_NO, KC_TRNS, LGUI(KC_SPC), KC_NO, KC_NO
+                    //`--------------------------'  `----------------------'
+    ),
+    [2] = LAYOUT_split_3x6_3(
+    //,--------------------------------------.    ,--------------------------------------------|
+         KC_NO, KC_NO, KC_2, KC_3, KC_4, KC_5,     LGUI(KC_GRV), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+         KC_1, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,  KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, LGUI(KC_Y), LGUI(LSFT(KC_4)),
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+         KC_NO, LGUI(KC_1), KC_NO, KC_NO, KC_TILD, KC_GRV,    LALT(KC_BSPACE), LALT(KC_LEFT), LGUI(KC_I), LALT(KC_RGHT), KC_END, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+                          KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO
+                    //`--------------------------'  `----------------------'
+    ),
+
+[3] = LAYOUT_split_3x6_3(
+    //,--------------------------------------.    ,--------------------------------------------|
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        KC_NO, KC_NO, LGUI(KC_LBRC), KC_NO, LGUI(KC_RBRC), LGUI(KC_L),     KC_PGDN, KC_4, KC_5, KC_6, KC_SCOLON, KC_BSLS,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        KC_NO, KC_NO, LGUI(KC_MINS), KC_NO, LGUI(KC_PLUS), LGUI(KC_BSPC),     KC_NO, KC_1, KC_2, KC_3, KC_NO, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+                          KC_TRNS, KC_NO, KC_NO, KC_NO, KC_0, KC_NO
+                    //`--------------------------'  `----------------------'
+    ),
+    //left hand
+    [4] = LAYOUT_split_3x6_3(
+    //,--------------------------------------.    ,--------------------------------------------|
+        KC_NO, LGUI(KC_A), LGUI(KC_W), KC_BSPC, KC_TAB, KC_NO,     KC_NO, LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        LGUI(KC_A), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        KC_NO, LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       KC_X, KC_NO, KC_NO, KC_NO, TO(0), KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+                            KC_NO, KC_NO, KC_ESC, KC_SPC, KC_NO, KC_NO
+                    //`--------------------------'  `----------------------'
+    ),
+[5] = LAYOUT_split_3x6_3(
+    //,--------------------------------------.    ,--------------------------------------------|
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, KC_NO, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, KC_NO, KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, TO(0), KC_NO,
+    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
+                            KC_NO, KC_NO, KC_NO, KC_NO, KC_ACL0, KC_NO
+                    //`--------------------------'  `----------------------'
+    )
+
+
+
 	[0] = LAYOUT_ortho_4x12(KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC, KC_TAB, LCTL_T(KC_A), KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_ENT, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_QUOT, KC_LCTL, KC_NO, KC_LALT, KC_LGUI, MO(3), MO(1), KC_SPC, MO(2), KC_NO, KC_NO, KC_NO, TO(3)),
 	[1] = LAYOUT_ortho_4x12(KC_NO, LGUI(KC_GRV), LGUI(KC_W), KC_NO, LGUI(KC_R), LGUI(KC_T), KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, SGUI(KC_P), LGUI(KC_BSPC), LGUI(KC_TAB), LGUI(KC_A), LGUI(KC_S), LGUI(KC_K), LGUI(KC_F), LGUI(KC_L), KC_ASTR, LCTL(KC_H), KC_MINS, KC_EQL, KC_BSLS, LGUI(KC_ENT), KC_LSFT, LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C), LGUI(KC_C), LGUI(KC_V), LGUI(KC_N), KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, LGUI(KC_SPC), KC_NO, KC_NO, KC_TRNS, KC_NO, SGUI(KC_4)),
 	[2] = LAYOUT_ortho_4x12(KC_NO, KC_1, KC_2, KC_3, KC_4, KC_5, KC_NO, LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO, KC_NO, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO, KC_LSFT, LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), KC_TILD, KC_GRV, LGUI(KC_LBRC), LALT(KC_LEFT), LGUI(KC_Y), LALT(KC_RGHT), LGUI(KC_RBRC), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO),
