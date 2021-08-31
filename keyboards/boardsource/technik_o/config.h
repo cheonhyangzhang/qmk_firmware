@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID    0x4273 
+#define VENDOR_ID    0x4273
 #define PRODUCT_ID   0x0079
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Boardsource
@@ -49,13 +49,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define BACKLIGHT_PIN B7
 //#define BACKLIGHT_LEVELS 3
-#define BACKLIGHT_BREATHING
-#define RGBLIGHT_ANIMATIONS
-#define RGB_DI_PIN C6
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120
-#ifdef RGBLIGHT_ENABLE
-#define RGBLED_NUM 10    // Number of LEDs
-#endif
+//#define BACKLIGHT_BREATHING
+//##define RGBLIGHT_ANIMATIONS
+//#define RGB_DI_PIN C6
+//#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120
+//#ifdef RGBLIGHT_ENABLE
+//#define RGBLED_NUM 10    // Number of LEDs
+//#endif
 
 #define DRIVER_LED_TOTAL  58
 
