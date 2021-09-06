@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_ortho_4x12(
     //,--------------------------------------.            ,--------------------------------------------|
-        KC_NO,  KC_Q,  KC_W, KC_E, KC_R, KC_T,          KC_Y, KC_U, TD(I_QUOT),    TD(O_LSFT_QUOT),   KC_P,    KC_NO,
+        KC_LGUI,  KC_Q,  KC_W, KC_E, KC_R, KC_T,          KC_Y, KC_U, TD(I_QUOT),    TD(O_LSFT_QUOT),   KC_P,    KC_NO,
     //|--------+--------+--------+--------+---------|     |--------+--------+--------+--------+--------|
         KC_Q, KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_ENT,  KC_P,
     //|--------+--------+--------+--------+---------|     |--------+--------+--------+--------+--------|
