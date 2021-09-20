@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_ortho_4x12(
     //,--------------------------------------.            ,--------------------------------------------|
-        KC_LGUI,  KC_Q,  KC_W, KC_E, KC_R, KC_T,          KC_Y, KC_U, TD(I_QUOT),    TD(O_LSFT_QUOT),   KC_P,    KC_NO,
+        KC_LGUI(KC_H),  KC_LGUI,  KC_W, KC_E, KC_R, KC_T,          KC_Y, KC_U, TD(I_QUOT),    TD(O_LSFT_QUOT),   KC_P,    KC_BSPC,
     //|--------+--------+--------+--------+---------|     |--------+--------+--------+--------+--------|
         KC_Q, KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_ENT,  KC_P,
     //|--------+--------+--------+--------+---------|     |--------+--------+--------+--------+--------|
@@ -71,11 +71,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //left hand
     [4] = LAYOUT_ortho_4x12(
     //,--------------------------------------.    ,--------------------------------------------|
-        KC_NO, LGUI(KC_A), LGUI(KC_W), KC_BSPC, KC_TAB, KC_NO,     KC_NO, LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO,
+        KC_NO, LGUI(KC_A), LGUI(KC_W), KC_BSPC, KC_TAB, KC_NO,     LGUI(KC_H), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_NO,
     //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        LGUI(KC_A), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
+        LGUI(KC_A), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X, KC_LEFT, KC_DOWN, KC_RGHT, LGUI(KC_TAB), KC_NO,
     //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       KC_X, KC_NO, KC_NO, KC_NO, TO(0), KC_NO,
+        KC_NO, LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       KC_NO, KC_NO, KC_NO, KC_NO, TO(0), KC_NO,
     //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_ESC, KC_SPC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
                     //`--------------------------'  `----------------------'
