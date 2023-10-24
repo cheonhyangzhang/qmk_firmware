@@ -1,0 +1,12 @@
+# Command to compile
+
+```
+qmk compile  -kb crkbd -km cheonhyangzhang
+```
+
+```
+qmk compile  -kb boardsource/technik_o -km cheonhyangzhang
+```
+
+# When flash the corne lp with qmk tool, remember to flash both two splits to see the changes to take effect.
+
