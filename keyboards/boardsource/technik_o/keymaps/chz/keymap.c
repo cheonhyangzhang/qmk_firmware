@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_ortho_4x12(
      LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(0),          KC_UP,              TO(1),          KC_NO,              LGUI(KC_W),
      KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,          KC_LEFT,        KC_DOWN,            KC_RGHT,        LGUI(KC_Y),         KC_END,
-     TO(5),             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_SPACE),  LALT(KC_LEFT),  TD(FINDER_KEYS),    LALT(KC_RGHT),  LALT(LGUI(KC_V)),   LGUI(KC_DOWN),
+     TO(5),             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPC),    LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), LALT(LGUI(KC_V)),  LGUI(KC_DOWN),
      KC_NO,             KC_NO,              KC_NO,              KC_NO,          KC_NO,    MO(6),    KC_NO,            KC_NO,          KC_NO,              KC_NO,          KC_NO,              KC_NO
   ),
   [4] = LAYOUT_ortho_4x12(
