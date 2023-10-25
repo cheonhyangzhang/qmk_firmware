@@ -32,10 +32,10 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ortho_4x12(
-    KC_NO,    KC_NO,        KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            KC_NO,    KC_BSPC,
-    KC_Q,     LALT_T(KC_A), LCTL_T(KC_S), LGUI_T(KC_D),  LSFT_T(KC_F),    KC_G,    KC_H,   LSFT_T(KC_J),  LGUI_T(KC_K),       LCTL_T(KC_L),            LALT_T(KC_ENT),   KC_P,
-    KC_NO,    KC_Z,         KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT,
-    KC_NO,    KC_NO,   KC_NO, MO(4), KC_LSFT, MO(2),   KC_SPC, MO(3), KC_NO,      KC_NO,          KC_NO,    KC_NO
+    KC_NO,    KC_NO,  KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            KC_NO,    KC_BSPC,
+    KC_Q,     KC_A,   LALT_T(KC_S), LCTL_T(KC_D),  LGUI_T(KC_F),    KC_G,    KC_H,   LGUI_T(KC_J),  LCTL_T(KC_K),       LALT_T(KC_L),   KC_ENT,   KC_P,
+    KC_NO,    KC_Z,   KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT,
+    KC_NO,    KC_NO,  KC_NO, MO(4), KC_LSFT, MO(2),   KC_SPC, MO(3), KC_NO,      KC_NO,          KC_NO,    KC_NO
   ),
   [1] = LAYOUT_ortho_4x12(
       KC_TRNS,    KC_TRNS,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,          KC_NO,            KC_MS_UP,     KC_NO,          KC_NO,      KC_TRNS,
