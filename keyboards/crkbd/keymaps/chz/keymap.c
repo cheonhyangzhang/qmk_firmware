@@ -29,15 +29,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // MO(2) provides navigation layer
   // KC_RSHIFT is not often used
   [0] = LAYOUT_split_3x6_3(
-    KC_LALT,  KC_LGUI,  KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            KC_NO,    KC_BSPC,
-    KC_Q,     LALT_T(KC_A),   LCTL_T(KC_S), LGUI_T(KC_D),  LSFT_T(KC_F),    KC_G,    KC_H,   LSFT_T(KC_J),  LGUI_T(KC_K),       LCTL_T(KC_L),            LALT_T(KC_ENT),   KC_P,
-    KC_LCTL,  KC_Z,     KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT,
+    KC_NO,    KC_NO,        KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            KC_NO,    KC_BSPC,
+    KC_Q,     LALT_T(KC_A), LCTL_T(KC_S), LGUI_T(KC_D),  LSFT_T(KC_F),    KC_G,    KC_H,   LSFT_T(KC_J),  LGUI_T(KC_K),       LCTL_T(KC_L),            LALT_T(KC_ENT),   KC_P,
+    KC_NO,    KC_Z,         KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT,
                               MO(4), KC_LSFT, MO(2),   KC_SPC, MO(3), KC_NO
   ),
  //mouse layer
   [1] = LAYOUT_split_3x6_3(
       KC_TRNS,    KC_TRNS,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,          KC_NO,            KC_MS_UP,     KC_NO,          KC_NO,      KC_TRNS,
-      KC_NO,      KC_TRNS,    KC_TRNS,  KC_TRNS,    KC_TRNS,    KC_NO,    KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
+      KC_NO,      KC_TRNS,  KC_TRNS,  KC_TRNS,    KC_TRNS,    KC_NO,    KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
       KC_TRNS,    KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_SPC,       KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
@@ -58,8 +58,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_SPC) is for mac spotlight search
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [2] = LAYOUT_split_3x6_3(
-    LGUI(KC_W),       LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
+    KC_NO,            LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
+    LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     KC_NO,        KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
     LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_PIPE,
                                                               KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), MO(6),        KC_NO
   ),
