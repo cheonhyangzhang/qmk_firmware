@@ -1,3 +1,7 @@
+#ifdef CONSOLE_ENABLE
+#include "print.h"
+#endif
+
 #include QMK_KEYBOARD_H
 
 #include <stdio.h>
@@ -8,6 +12,15 @@ enum tap_dance_codes {
   EQUAL_PLUS,
 };
 // tap dance section end
+enum layer_names {
+    _BASE,
+    _MOUSE,
+    _CMD,
+    _NAV,
+    _NUM,
+    _ONEHAND,
+    _WIN,
+};
 
 // basic key mappings
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -28,18 +41,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // MO(1) provides command layer
   // MO(2) provides navigation layer
   // KC_RSHIFT is not often used
-  [0] = LAYOUT_split_3x6_3(
-    KC_NO,    KC_NO,  KC_W,         KC_E,         KC_R,         KC_T,    KC_Y,   KC_U,          KC_I,         KC_O,           KC_NO,    KC_BSPC,
-    KC_Q,     KC_A,   LCTL_T(KC_S), LALT_T(KC_D), LGUI_T(KC_F), KC_G,    KC_H,   LGUI_T(KC_J),  LALT_T(KC_K), LCTL_T(KC_L),   KC_ENT,   KC_P,
-    KC_NO,    KC_Z,   KC_X,         KC_C,         KC_V,         KC_B,    KC_N,   KC_M,          KC_COMM,      KC_DOT,         KC_SLASH, KC_QUOT,
-                                    MO(4),        KC_LSFT,      MO(2),   KC_SPC, MO(3),         KC_NO
+  [_BASE] = LAYOUT_split_3x6_3(
+    KC_NO,    KC_NO,  KC_W,         KC_E,         KC_R,         KC_T,    	KC_Y,   KC_U,          	KC_I,         KC_O,           KC_NO,    KC_NO,
+    KC_Q,     KC_A,   LALT_T(KC_S), LGUI_T(KC_D), LCTL_T(KC_F), KC_G,    	KC_H,   LCTL_T(KC_J),  	LGUI_T(KC_K), LALT_T(KC_L),   KC_P, 		KC_QUOT,
+    KC_NO,    KC_Z,   KC_X,         KC_C,         KC_V,         KC_B,    	KC_N,   KC_M,          	KC_COMM,      KC_DOT,         KC_NO,    KC_NO,
+                                    MO(_NUM),     KC_LSFT,      MO(_CMD), KC_SPC, MO(_NAV), 			KC_NO
   ),
  //mouse layer
-  [1] = LAYOUT_split_3x6_3(
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,          KC_NO,            KC_MS_UP,     KC_NO,          KC_NO,      KC_TRNS,
-      KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_NO,    KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
-      KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_SPC,       KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
-                                    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MS_BTN1,     KC_TRNS,          KC_NO
+  [_MOUSE] = LAYOUT_split_3x6_3(
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_NO,          KC_NO,            KC_MS_UP,     KC_NO,          KC_NO,      KC_TRNS,
+      KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  TO(_BASE),  KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
+      KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_SPC,       KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
+                                    KC_TRNS,  KC_TRNS,  KC_TRNS,  	KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
   // command layer
   //  offer cmd based combination keys on the left and symbols on the right,
@@ -57,11 +70,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // KC_BSPC provides backspace in normal cases, when two hands are on the keyboard
   // LGUI(KC_SPC) is for mac spotlight search
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
-  [2] = LAYOUT_split_3x6_3(
-    LGUI(KC_W),     LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     KC_NO,        KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
-    LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_PIPE,
-                                                              KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), MO(6),        KC_NO
+  [_CMD] = LAYOUT_split_3x6_3(
+    KC_NO,        LALT(LSFT(LGUI(KC_V))),   LGUI(KC_W),     LGUI(LSFT(KC_P)),   LGUI(KC_R),     LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   KC_NO,
+    KC_NO,   			LGUI(KC_A),               KC_TAB,         TD(FINDER_KEYS),    KC_ESC,         LGUI(KC_F),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
+    LSFT(KC_TAB), LGUI(KC_Z),               LGUI(KC_X),     LCTL(KC_C),         LGUI(KC_C),     LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_PIPE,
+                                                            KC_NO,              KC_NO,          KC_NO,        KC_ENT,       MO(_NAV),     KC_NO
   ),
   // navigation layer
   //   provides numbers, symbols on the left and navigation and other commands on the right
@@ -80,33 +93,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LALT(KC_LEFT) and LALT(KC_RGHT) go left and right faster
   // LGUI(KC_I) open workspace switcher in mac
   // KC_END go to the end of text
-  [3] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),  KC_F2,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(0),          KC_UP,               TO(1),         KC_NO,             KC_NO,
-     KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,          KC_LEFT,        KC_DOWN,             KC_RGHT,       LGUI(KC_Y),        KC_END,
-     TO(5),             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPC),    LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), LALT(LGUI(KC_V)),  KC_NO,
-                                                                KC_NO,          KC_NO,    MO(6),    KC_NO,            KC_NO,          KC_NO
+  [_NAV] = LAYOUT_split_3x6_3(
+     LCTL(LGUI(KC_Q)),  KC_F2,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(_BASE),      KC_UP,    TO(_MOUSE),   KC_NO,        KC_NO,
+     KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  KC_NO,            KC_LEFT,        KC_DOWN,  KC_RGHT,      LGUI(KC_Y),   LGUI(KC_BSPC),
+     TO(_ONEHAND),      LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPC),    KC_NO,          KC_BSLS,  KC_SLASH,     KC_NO,        KC_NO,
+                                                                KC_NO,          KC_LSFT,  MO(_CMD), KC_NO,            KC_NO,          KC_NO
   ),
   // nums
-  [4] = LAYOUT_split_3x6_3(
-      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,  KC_PGUP,   KC_7, KC_8,   KC_9, KC_NO,   KC_NO,
-      KC_NO,            LGUI(KC_PLUS),  LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  KC_NO,  KC_PGDN,   KC_4, KC_5,   KC_6, KC_NO,   KC_BSLS,
-      LGUI(KC_Q),       LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,  KC_NO,     KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
-                                                        KC_NO,                    KC_NO,          KC_NO,  KC_DOT,    KC_0, KC_NO
+  [_NUM] = LAYOUT_split_3x6_3(
+      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,  KC_NO,    			KC_7, KC_8,   KC_9, KC_NO,   KC_NO,
+      KC_NO,            LGUI(KC_PLUS),  LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  KC_NO,  KC_PGUP,  			KC_4, KC_5,   KC_6, KC_DOT,  KC_BSLS,
+      LGUI(KC_Q),       LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,  KC_PGDN,  			KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
+                                                        KC_NO,                    KC_NO,          KC_NO,  LSFT(KC_ENT),   KC_0, KC_NO
   ),
   //one hand
   //this layer is not up to date
-  [5] = LAYOUT_split_3x6_3(
-      TO(0),      LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
+  [_ONEHAND] = LAYOUT_split_3x6_3(
+      TO(_BASE),      LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
       LGUI(KC_A), KC_LSFT,    KC_LGUI,    LGUI(KC_C),         LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X,           KC_LEFT,        KC_DOWN,    KC_RGHT,    LGUI(KC_Z), KC_NO,
       KC_NO,      LGUI(KC_Z), KC_X,       KC_HASH,            KC_ENT,           LGUI(KC_BSPC),  LGUI(KC_Z),     LGUI(KC_BSPC),  KC_DOWN,    KC_UP,      KC_NO,      LGUI(KC_DOWN),
                                           KC_NO,              KC_NO,            KC_SPC,         KC_SPC,         KC_NO,          KC_NO
   ),
   //window layer
-  [6] = LAYOUT_split_3x6_3(
-      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_Z)),     LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,      KC_NO,
-      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),   KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      KC_NO,
-      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),     LGUI(KC_Q),   KC_NO,            KC_NO,        KC_NO,            LGUI(KC_H), LGUI(KC_N),
-                                                                          KC_NO,                  KC_NO,                  KC_NO,                KC_NO,        KC_NO,            KC_NO
+  [_WIN] = LAYOUT_split_3x6_3(
+      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       KC_NO,                    LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),         LGUI(KC_O),       KC_NO,      KC_NO,
+      KC_NO,              LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),       KC_NO,        LALT(LSFT(KC_J)), LSFT(LALT(KC_M)),   LALT(LSFT(KC_K)), KC_NO,      KC_NO,
+      KC_NO,              LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),         KC_NO,        KC_NO,            LALT(LSFT(KC_ENT)), LGUI(KC_H),       KC_NO, KC_NO,
+                                                                          KC_NO,                  KC_NO,                  KC_NO,                    KC_NO,        KC_NO,            KC_NO
   )
 };
 
@@ -256,3 +269,27 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 // tap dance operations end
 
+// this is to help print out the key pressed to generate heat map data
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    #ifdef CONSOLE_ENABLE
+        const bool is_combo = record->event.type == COMBO_EVENT;
+        uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
+             keycode,
+             is_combo ? 254 : record->event.key.row,
+             is_combo ? 254 : record->event.key.col,
+             get_highest_layer(layer_state),
+             record->event.pressed,
+             get_mods(),
+             get_oneshot_mods(),
+             record->tap.count
+             );
+    #endif
+    switch (keycode) {
+    //...
+    }
+    return true;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, _CMD, _NAV, _WIN);
+}
