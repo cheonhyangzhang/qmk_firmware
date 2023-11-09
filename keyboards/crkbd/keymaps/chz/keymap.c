@@ -24,97 +24,42 @@ enum layer_names {
 
 // basic key mappings
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  // basic layer
-  //  offer all letters and most frequent keys,
-  // letter keys are organized in qwerty layout to avoid additional learning curve for other layouts,
-  //  also considering mobile device still uses qwerty
-  // Q and P is places to the sides of the keyboard to avoid pinky or ring finger to reach top corner keys
-  //  so far Q and P is working fine most of time, occasionly hit enter when trying to hit P.
-  // KC_LGUI and KC_LALT on top left to serve occasion use case of cmd click or option click
-  // quotes ' and " is used often, hence using tap dance for now, they are working good so far.
-  // KC_BSPC is used as secondary backspace, sometime it is more convenient when doing a lot of delete
-  // KC_LCTL is used often, as a vim user, many keys are using left ctrl, using pinky to hit ctrl works fine.
-  // command, dot, splash are using as closer to the original standard keyboard layout, no issues so far.
-  // TO(4) is needed to handle files management related layer.
-  // MO(3) provides quick access to number layer
-  // KC_LSFT is often used for cap letters, currently does have difficulties when hitting left section letters.
-  // MO(1) provides command layer
-  // MO(2) provides navigation layer
-  // KC_RSHIFT is not often used
   [_BASE] = LAYOUT_split_3x6_3(
     KC_NO,    KC_NO,  KC_W,         KC_E,         KC_R,         KC_T,    	KC_Y,   KC_U,          	KC_I,         KC_O,           KC_NO,    KC_NO,
     KC_Q,     KC_A,   LALT_T(KC_S), LGUI_T(KC_D), LCTL_T(KC_F), KC_G,    	KC_H,   LCTL_T(KC_J),  	LGUI_T(KC_K), LALT_T(KC_L),   KC_P, 		KC_QUOT,
     KC_NO,    KC_Z,   KC_X,         KC_C,         KC_V,         KC_B,    	KC_N,   KC_M,          	KC_COMM,      KC_DOT,         KC_NO,    KC_NO,
                                     MO(_NUM),     KC_LSFT,      MO(_CMD), KC_SPC, MO(_NAV), 			KC_NO
   ),
- //mouse layer
   [_MOUSE] = LAYOUT_split_3x6_3(
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_NO,          KC_NO,            KC_MS_UP,     KC_NO,          KC_NO,      KC_TRNS,
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_NO,          KC_MS_WH_RIGHT,   KC_MS_UP,     KC_MS_WH_LEFT,  KC_NO,      KC_TRNS,
       KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  TO(_BASE),  KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
-      KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_SPC,       KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
+      KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_MS_WH_UP,    KC_NO,            KC_SPC,       KC_MS_BTN2,     KC_NO,      KC_NO,
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,  	KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
-  // command layer
-  //  offer cmd based combination keys on the left and symbols on the right,
-  //  goal is to reduce learning curve, make it feels like original qwerty keyboard
-  // top left LGUI(KC_W) is used when primarily using mouse on right hand, provide easy way to cmd w to close tab.
-  // LGUI(KC_S) provides cmd s, original cmd s is taken by tab, tab is more often used and needs a better place
-  // LGUI(LSFT(KC_P)) is used to trigger 1Password
-  // LGUI(KC_BSPC) is for delete file
-  // LGUI(KC_TAB) is used for switch app in mac
-  // KC_TAB is working good, once get used to it, this becomes a natrual location for tab, and easy to press.
-  // LGUI(KC_F) is put at the d because more accesible f is left for more important ESC
-  // ESC is important due to heavy vim usage and place f is easy enough to use
-  // LCTL(KC_H) is due to heavy tmux user, tmux start key is ctrl H, hence put in the most accessible j location
-  // MINUS_UNDERSCORE provides - and _, EQUAL_PLUS provides = and ,
-  // KC_BSPC provides backspace in normal cases, when two hands are on the keyboard
-  // LGUI(KC_SPC) is for mac spotlight search
-  // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [_CMD] = LAYOUT_split_3x6_3(
-    KC_NO,        LALT(LSFT(LGUI(KC_V))),   LGUI(KC_W),     LGUI(LSFT(KC_P)),   LGUI(KC_R),     LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   KC_NO,
-    KC_NO,   			LGUI(KC_A),               KC_TAB,         TD(FINDER_KEYS),    KC_ESC,         LGUI(KC_F),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
-    LSFT(KC_TAB), LGUI(KC_Z),               LGUI(KC_X),     LCTL(KC_C),         LGUI(KC_C),     LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_PIPE,
-                                                            KC_NO,              KC_NO,          KC_NO,        KC_ENT,       MO(_NAV),     KC_NO
+    KC_NO,              KC_NO,        LGUI(KC_W),     LGUI(LSFT(KC_P)),   LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   KC_NO,
+    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,         LGUI(KC_F),         KC_ESC,         LALT(LSFT(LGUI(KC_V))),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
+    LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),     LCTL(KC_C),         LGUI(KC_C),     LGUI(KC_V),               KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_NO,
+                                                      KC_NO,              KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
   ),
-  // navigation layer
-  //   provides numbers, symbols on the left and navigation and other commands on the right
-  // although there is dedicated number layer at layer 3, but for vim user, 2 to 5 lines command is often used,
-  //   put 1 to 5 number in traditional ways help make it easier, this can be futher thought about later
-  // KC_1 is put to the left of KC_EXLM instead of top, because top location is harder to press
-  // LGUI(KC_GRV) is used to switch instances of same app
-  // LGUI(KC_U) and LGUI(KC_O) are used to switch between mac workspace
-  // LGUI(KC_W) provides close window when two hands are on keyboard
-  // KC_HOME is to go to the head of a text
-  // LGUI(KC_Y) Paste app trigger
-  // LGUI(LSFT(KC_4)) screenshot
-  // LCTL(KC_SPC) language input source switch
-  // LGUI(KC_1) quickly switched to the first tab of browser
-  // LALT(KC_BSPC) delete a word
-  // LALT(KC_LEFT) and LALT(KC_RGHT) go left and right faster
-  // LGUI(KC_I) open workspace switcher in mac
-  // KC_END go to the end of text
   [_NAV] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),  KC_F2,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(_BASE),      KC_UP,    TO(_MOUSE),   KC_NO,        KC_NO,
-     KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  KC_NO,            KC_LEFT,        KC_DOWN,  KC_RGHT,      LGUI(KC_Y),   LGUI(KC_BSPC),
-     TO(_ONEHAND),      LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPC),    KC_NO,          KC_BSLS,  KC_SLASH,     KC_NO,        KC_NO,
-                                                                KC_NO,          KC_LSFT,  MO(_CMD), KC_NO,            KC_NO,          KC_NO
+     LCTL(LGUI(KC_Q)),  KC_F2,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(_BASE),          KC_UP,    TO(_MOUSE),   KC_NO,        KC_NO,
+     KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  TD(FINDER_KEYS),  KC_LEFT,            KC_DOWN,  KC_RGHT,      LGUI(KC_Y),   LGUI(KC_BSPC),
+     TO(_ONEHAND),      LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPC),    LALT(LGUI(KC_V)),   KC_BSLS,  KC_SLASH,     KC_NO,        KC_NO,
+                                                                KC_NO,          KC_LSFT,  MO(_CMD), KC_NO,            KC_NO,              KC_NO
   ),
-  // nums
   [_NUM] = LAYOUT_split_3x6_3(
       LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,  KC_NO,    			KC_7, KC_8,   KC_9, KC_NO,   KC_NO,
       KC_NO,            LGUI(KC_PLUS),  LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  KC_NO,  KC_PGUP,  			KC_4, KC_5,   KC_6, KC_DOT,  KC_BSLS,
-      LGUI(KC_Q),       LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,  KC_PGDN,  			KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
+      KC_NO,            LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,  KC_PGDN,  			KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
                                                         KC_NO,                    KC_NO,          KC_NO,  LSFT(KC_ENT),   KC_0, KC_NO
   ),
-  //one hand
-  //this layer is not up to date
   [_ONEHAND] = LAYOUT_split_3x6_3(
       TO(_BASE),      LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
       LGUI(KC_A), KC_LSFT,    KC_LGUI,    LGUI(KC_C),         LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X,           KC_LEFT,        KC_DOWN,    KC_RGHT,    LGUI(KC_Z), KC_NO,
       KC_NO,      LGUI(KC_Z), KC_X,       KC_HASH,            KC_ENT,           LGUI(KC_BSPC),  LGUI(KC_Z),     LGUI(KC_BSPC),  KC_DOWN,    KC_UP,      KC_NO,      LGUI(KC_DOWN),
                                           KC_NO,              KC_NO,            KC_SPC,         KC_SPC,         KC_NO,          KC_NO
   ),
-  //window layer
   [_WIN] = LAYOUT_split_3x6_3(
       KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       KC_NO,                    LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),         LGUI(KC_O),       KC_NO,      KC_NO,
       KC_NO,              LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),       KC_NO,        LALT(LSFT(KC_J)), LSFT(LALT(KC_M)),   LALT(LSFT(KC_K)), KC_NO,      KC_NO,
