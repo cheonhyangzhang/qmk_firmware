@@ -37,10 +37,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,  	KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
   [_CMD] = LAYOUT_split_3x6_3(
-    KC_NO,              KC_NO,        LGUI(KC_W),     LGUI(LSFT(KC_P)),   LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   KC_NO,
-    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,         LGUI(KC_F),         KC_ESC,         LALT(LSFT(LGUI(KC_V))),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
-    LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),     LCTL(KC_C),         LGUI(KC_C),     LGUI(KC_V),               KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_NO,
-                                                      KC_NO,              KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
+    KC_NO,              KC_NO,        LGUI(LSFT(KC_P)),   LGUI(KC_W),     LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   KC_NO,
+    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),     KC_ESC,         LALT(LSFT(LGUI(KC_V))),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
+    LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),     LGUI(KC_C),     LGUI(KC_V),               KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_NO,
+                                                          KC_NO,          KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
   ),
   [_NAV] = LAYOUT_split_3x6_3(
      LCTL(LGUI(KC_Q)),  KC_F2,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(_BASE),          KC_UP,    TO(_MOUSE),   KC_NO,        KC_NO,
