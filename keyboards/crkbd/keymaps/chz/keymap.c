@@ -7,7 +7,6 @@
 #include <stdio.h>
 // tap dance section start
 enum tap_dance_codes {
-  FINDER_KEYS,
   MINUS_UNDERSCORE,
   EQUAL_PLUS,
 };
@@ -37,22 +36,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,  	KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
   [_CMD] = LAYOUT_split_3x6_3(
-    KC_NO,              KC_NO,        LGUI(LSFT(KC_P)),   LGUI(KC_W),     LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   KC_NO,
-    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),     KC_ESC,         LALT(LSFT(LGUI(KC_V))),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCLN,
-    LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),     LGUI(KC_C),     LGUI(KC_V),               KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_NO,
+    KC_NO,              KC_NO,        LGUI(LSFT(KC_P)),   LGUI(KC_W),     LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,    KC_RPRN,        KC_NO,            KC_NO,
+    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),     KC_ESC,         LSFT(LGUI(KC_V)),   			KC_ASTR,      KC_BSPC,      LCTL(KC_H), KC_MINUS,       KC_COLN,          KC_SCLN,
+    LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),     LGUI(KC_C),     LGUI(KC_V),               KC_EQUAL,     KC_LBRC,      KC_RBRC,    LSFT(KC_MINUS), LSFT(KC_EQUAL),   KC_NO,
                                                           KC_NO,          KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
   ),
   [_NAV] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),  KC_F2,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(_BASE),          KC_UP,    TO(_MOUSE),   KC_NO,        KC_NO,
-     KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  TD(FINDER_KEYS),  KC_LEFT,            KC_DOWN,  KC_RGHT,      LGUI(KC_Y),   LGUI(KC_BSPC),
-     TO(_ONEHAND),      LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPC),    LALT(LGUI(KC_V)),   KC_BSLS,  KC_SLASH,     KC_NO,        KC_NO,
+     LCTL(LGUI(KC_Q)),  KC_NO,              KC_NO,              KC_LCBR,        KC_RCBR,  KC_NO,    LSFT(LGUI(KC_N)), TO(_BASE),          KC_UP,    TO(_MOUSE),   KC_NO,        KC_NO,
+     KC_NO,             KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  LALT(KC_BSPC),    KC_LEFT,            KC_DOWN,  KC_RGHT,      LGUI(KC_Y),   LGUI(KC_BSPC),
+     KC_NO,             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   KC_NO,            LALT(LGUI(KC_V)),   KC_BSLS,  KC_SLASH,     KC_NO,        KC_NO,
                                                                 KC_NO,          KC_LSFT,  MO(_CMD), KC_NO,            KC_NO,              KC_NO
   ),
   [_NUM] = LAYOUT_split_3x6_3(
-      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,  KC_NO,    			KC_7, KC_8,   KC_9, KC_NO,   KC_NO,
-      KC_NO,            LGUI(KC_PLUS),  LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  KC_NO,  KC_PGUP,  			KC_4, KC_5,   KC_6, KC_DOT,  KC_BSLS,
-      KC_NO,            LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,  KC_PGDN,  			KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
-                                                        KC_NO,                    KC_NO,          KC_NO,  LSFT(KC_ENT),   KC_0, KC_NO
+      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,              KC_NO,    			KC_7, KC_8,   KC_9, KC_NO,   KC_NO,
+      KC_NO,            LGUI(KC_PLUS),  LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  LSFT(LGUI(KC_G)),   KC_PGUP,  			KC_4, KC_5,   KC_6, KC_DOT,  KC_BSLS,
+      KC_NO,            LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,              KC_PGDN,  			KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
+                                                        KC_NO,                    KC_NO,          KC_NO,              LSFT(KC_ENT),   KC_0, KC_NO
   ),
   [_ONEHAND] = LAYOUT_split_3x6_3(
       TO(_BASE),      LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
@@ -61,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_NO,              KC_NO,            KC_SPC,         KC_SPC,         KC_NO,          KC_NO
   ),
   [_WIN] = LAYOUT_split_3x6_3(
-      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       KC_NO,                    LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),         LGUI(KC_O),       KC_NO,      KC_NO,
-      KC_NO,              LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),       KC_NO,        LALT(LSFT(KC_J)), LSFT(LALT(KC_M)),   LALT(LSFT(KC_K)), KC_NO,      KC_NO,
-      KC_NO,              LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),         KC_NO,        KC_NO,            LALT(LSFT(KC_ENT)), LGUI(KC_H),       KC_NO, KC_NO,
+      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       KC_NO,                    LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,      KC_NO,
+      LSFT(LALT(KC_M)),   LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),       KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      KC_NO,
+      LALT(LSFT(KC_ENT)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),         KC_NO,        KC_NO,            KC_NO,        KC_NO,            KC_NO,      KC_NO,
                                                                           KC_NO,                  KC_NO,                  KC_NO,                    KC_NO,        KC_NO,            KC_NO
   )
 };
@@ -99,42 +98,6 @@ uint8_t dance_step(tap_dance_state_t *state) {
     return MORE_TAPS;
 }
 
-
-void on_dance_1(tap_dance_state_t *state, void *user_data);
-void dance_1_finished(tap_dance_state_t *state, void *user_data);
-void dance_1_reset(tap_dance_state_t *state, void *user_data);
-
-void on_dance_1(tap_dance_state_t *state, void *user_data) {
-    if(state->count == 3) {
-        tap_code16(LSFT(LGUI(KC_G)));
-        tap_code16(LSFT(LGUI(KC_G)));
-        tap_code16(LSFT(LGUI(KC_G)));
-    }
-    if(state->count > 3) {
-        tap_code16(LSFT(LGUI(KC_G)));
-    }
-}
-
-void dance_1_finished(tap_dance_state_t *state, void *user_data) {
-    dance_state[1].step = dance_step(state);
-    switch (dance_state[1].step) {
-        case SINGLE_TAP: register_code16(LSFT(LGUI(KC_SLASH))); break;
-        case SINGLE_HOLD: register_code16(LSFT(LGUI(KC_G))); break;
-        case DOUBLE_TAP: register_code16(LSFT(LGUI(KC_SLASH))); register_code16(LSFT(LGUI(KC_SLASH))); break;
-        case DOUBLE_SINGLE_TAP: tap_code16(LSFT(LGUI(KC_SLASH))); register_code16(LSFT(LGUI(KC_SLASH)));
-    }
-}
-
-void dance_1_reset(tap_dance_state_t *state, void *user_data) {
-    wait_ms(10);
-    switch (dance_state[1].step) {
-        case SINGLE_TAP: unregister_code16(LSFT(LGUI(KC_SLASH))); break;
-        case SINGLE_HOLD: unregister_code16(LGUI(KC_G)); break;
-        case DOUBLE_TAP: unregister_code16(LSFT(LGUI(KC_SLASH))); break;
-        case DOUBLE_SINGLE_TAP: unregister_code16(LSFT(LGUI(KC_SLASH))); break;
-    }
-    dance_state[1].step = 0;
-}
 
 void on_dance_6(tap_dance_state_t *state, void *user_data);
 void dance_6_finished(tap_dance_state_t *state, void *user_data);
@@ -208,7 +171,6 @@ void dance_7_reset(tap_dance_state_t *state, void *user_data) {
 }
 
 tap_dance_action_t tap_dance_actions[] = {
-        [FINDER_KEYS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_1, dance_1_finished, dance_1_reset),
         [MINUS_UNDERSCORE] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_6, dance_6_finished, dance_6_reset),
         [EQUAL_PLUS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_7, dance_7_finished, dance_7_reset),
 };
