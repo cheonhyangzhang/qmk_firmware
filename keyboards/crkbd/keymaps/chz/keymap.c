@@ -24,20 +24,20 @@ enum layer_names {
 // basic key mappings
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_split_3x6_3(
-    KC_NO,    KC_NO,  KC_W,         KC_E,         KC_R,         KC_T,    	KC_Y,   KC_U,          	KC_I,         KC_O,           KC_NO,    KC_NO,
-    KC_Q,     KC_A,   LALT_T(KC_S), LGUI_T(KC_D), LCTL_T(KC_F), KC_G,    	KC_H,   LCTL_T(KC_J),  	LGUI_T(KC_K), LALT_T(KC_L),   KC_P, 		KC_QUOT,
-    KC_NO,    KC_Z,   KC_X,         KC_C,         KC_V,         KC_B,    	KC_N,   KC_M,          	KC_COMM,      KC_DOT,         KC_NO,    KC_NO,
-                                    MO(_NUM),     KC_LSFT,      MO(_CMD), KC_SPC, MO(_NAV), 			KC_NO
+    KC_NO,    KC_NO,  KC_W,         KC_E,         KC_R,         KC_T,       KC_Y,   KC_U,          KC_I,         KC_O,           KC_NO,    KC_NO,
+    KC_Q,     KC_A,   LALT_T(KC_S), LGUI_T(KC_D), LCTL_T(KC_F), KC_G,       KC_H,   LCTL_T(KC_J),  LGUI_T(KC_K), LALT_T(KC_L),   KC_P,     KC_QUOT,
+    KC_NO,    KC_Z,   KC_X,         KC_C,         KC_V,         KC_B,       KC_N,   KC_M,          KC_COMM,      KC_DOT,         KC_NO,    KC_NO,
+                                    MO(_NUM),     KC_LSFT,      MO(_CMD),   KC_SPC, MO(_NAV),      KC_NO
   ),
   [_MOUSE] = LAYOUT_split_3x6_3(
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_NO,          KC_MS_WH_RIGHT,   KC_MS_UP,     KC_MS_WH_LEFT,  KC_NO,      KC_TRNS,
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,      KC_NO,          KC_MS_WH_RIGHT,   KC_MS_UP,     KC_MS_WH_LEFT,  KC_NO,      KC_NO,
       KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  TO(_BASE),  KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
-      KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    	KC_MS_WH_UP,    KC_NO,            KC_SPC,       KC_MS_BTN2,     KC_NO,      KC_NO,
-                                    KC_TRNS,  KC_TRNS,  KC_TRNS,  	KC_MS_BTN1,     KC_TRNS,          KC_NO
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,      KC_MS_WH_UP,    KC_NO,            KC_SPC,       KC_MS_BTN2,     KC_NO,      KC_NO,
+                                    KC_TRNS,  KC_TRNS,  KC_TRNS,    KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
   [_CMD] = LAYOUT_split_3x6_3(
     KC_NO,              KC_NO,        LGUI(LSFT(KC_P)),   LGUI(KC_W),     LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,    KC_RPRN,        KC_NO,            KC_NO,
-    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),     KC_ESC,         LSFT(LGUI(KC_V)),   			KC_ASTR,      KC_BSPC,      LCTL(KC_H), KC_MINUS,       KC_COLN,          KC_SCLN,
+    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),     KC_ESC,         LSFT(LGUI(KC_V)),         KC_ASTR,      KC_BSPC,      LCTL(KC_H), KC_MINUS,       KC_COLN,          KC_SCLN,
     LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),     LGUI(KC_C),     LGUI(KC_V),               KC_EQUAL,     KC_LBRC,      KC_RBRC,    LSFT(KC_MINUS), LSFT(KC_EQUAL),   KC_NO,
                                                           KC_NO,          KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
   ),
@@ -48,13 +48,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                 KC_NO,          KC_LSFT,  MO(_CMD), KC_NO,            KC_NO,              KC_NO
   ),
   [_NUM] = LAYOUT_split_3x6_3(
-      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,              KC_NO,    			KC_7, KC_8,   KC_9, KC_NO,   KC_NO,
-      KC_NO,            LGUI(KC_PLUS),  LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  LSFT(LGUI(KC_G)),   KC_PGUP,  			KC_4, KC_5,   KC_6, KC_DOT,  KC_BSLS,
-      KC_NO,            LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,              KC_PGDN,  			KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
+      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,              KC_NO,          KC_7, KC_8,   KC_9, KC_NO,   KC_NO,
+      KC_NO,            LGUI(KC_PLUS),  LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  LSFT(LGUI(KC_G)),   KC_PGUP,        KC_4, KC_5,   KC_6, KC_DOT,  KC_BSLS,
+      KC_NO,            LGUI(KC_MINUS), KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,              KC_PGDN,        KC_1, KC_2,   KC_3, KC_NO,   KC_NO,
                                                         KC_NO,                    KC_NO,          KC_NO,              LSFT(KC_ENT),   KC_0, KC_NO
   ),
   [_ONEHAND] = LAYOUT_split_3x6_3(
-      TO(_BASE),      LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
+      TO(_BASE),  LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
       LGUI(KC_A), KC_LSFT,    KC_LGUI,    LGUI(KC_C),         LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X,           KC_LEFT,        KC_DOWN,    KC_RGHT,    LGUI(KC_Z), KC_NO,
       KC_NO,      LGUI(KC_Z), KC_X,       KC_HASH,            KC_ENT,           LGUI(KC_BSPC),  LGUI(KC_Z),     LGUI(KC_BSPC),  KC_DOWN,    KC_UP,      KC_NO,      LGUI(KC_DOWN),
                                           KC_NO,              KC_NO,            KC_SPC,         KC_SPC,         KC_NO,          KC_NO
