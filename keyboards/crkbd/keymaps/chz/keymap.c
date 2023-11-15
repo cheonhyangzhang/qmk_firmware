@@ -37,14 +37,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_CMD] = LAYOUT_split_3x6_3(
     KC_NO,              KC_NO,        LGUI(LSFT(KC_P)),   LGUI(KC_W),     LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,    KC_RPRN,        KC_NO,            KC_NO,
-    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),     KC_ESC,         LSFT(LGUI(KC_V)),         KC_ASTR,      KC_BSPC,      LCTL(KC_H), KC_MINUS,       KC_COLN,          KC_SCLN,
-    LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),     LGUI(KC_C),     LGUI(KC_V),               KC_EQUAL,     KC_LBRC,      KC_RBRC,    LSFT(KC_MINUS), LSFT(KC_EQUAL),   KC_NO,
+    LSFT(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),     KC_ESC,         LSFT(LGUI(KC_V)),         KC_ASTR,      KC_BSPC,      KC_MINUS,   LCTL(KC_H),     KC_COLN,          KC_SCLN,
+    LSFT(LGUI(KC_Z)),   LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),     LGUI(KC_C),     LGUI(KC_V),               KC_NO,        KC_LBRC,      KC_RBRC,    LSFT(KC_MINUS), KC_NO,            KC_NO,
                                                           KC_NO,          KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
   ),
   [_NAV] = LAYOUT_split_3x6_3(
      LCTL(LGUI(KC_Q)),  KC_NO,              KC_NO,              KC_LCBR,        KC_RCBR,  KC_NO,    LSFT(LGUI(KC_N)), TO(_BASE),          KC_UP,    TO(_MOUSE),   KC_NO,        KC_NO,
      KC_NO,             KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  LALT(KC_BSPC),    KC_LEFT,            KC_DOWN,  KC_RGHT,      LGUI(KC_Y),   LGUI(KC_BSPC),
-     KC_NO,             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   KC_NO,            LALT(LGUI(KC_V)),   KC_BSLS,  KC_SLASH,     KC_NO,        KC_NO,
+     KC_NO,             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(LGUI(KC_V)), KC_EQUAL,           KC_BSLS,  KC_SLASH,     KC_NO,        KC_NO,
                                                                 KC_NO,          KC_LSFT,  MO(_CMD), KC_NO,            KC_NO,              KC_NO
   ),
   [_NUM] = LAYOUT_split_3x6_3(
