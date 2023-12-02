@@ -64,9 +64,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,    KC_NO,    KC_NO,        KC_NO,                    KC_NO,          KC_NO,              LSFT(KC_ENT),   KC_0, KC_NO,      KC_NO,          KC_NO,    KC_NO
   ),
   [_WIN] = LAYOUT_ortho_4x12(
-    KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       KC_NO,                    LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,      KC_NO,
-    LSFT(LALT(KC_M)),   LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),       KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      KC_NO,
-    LALT(LSFT(KC_ENT)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),         KC_NO,        KC_NO,            KC_NO,        KC_NO,            KC_NO,      KC_NO,
+    KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_L)),       LALT(LSFT(KC_H)),       KC_NO,                    LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,            KC_NO,
+    LSFT(LALT(KC_M)),   LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),       KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), LSFT(LALT(KC_M)), LALT(LSFT(KC_ENT)),
+    LALT(LSFT(KC_ENT)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),         KC_NO,        KC_NO,            KC_NO,        KC_NO,            KC_NO,            KC_NO,
     KC_NO,    KC_NO,    KC_NO,        KC_NO,                  KC_NO,                  KC_NO,                    KC_NO,        KC_NO,            KC_NO,      KC_NO,          KC_NO,    KC_NO
   )
 };
