@@ -24,14 +24,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             MO(_NUM),     KC_LSFT,      MO(_CMD),   KC_SPC, MO(_NAV),      KC_NO
   ),
   [_MOUSE] = LAYOUT_split_3x6_3(
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,             KC_NO,          KC_NO,      KC_NO,           KC_NO,         KC_NO,
-      KC_NO,    KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_NO,       KC_MS_WH_DOWN,     KC_MS_WH_RIGHT, KC_MS_UP,   KC_MS_WH_LEFT,   KC_NO,         KC_NO,
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_MS_WH_UP,       KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,     KC_MS_BTN2,    TO(_BASE),
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,             KC_NO,          KC_MS_UP,   KC_NO           KC_NO,      KC_NO,
+      KC_NO,    KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_NO,       KC_MS_WH_DOWN,     KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,    KC_MS_BTN2, KC_NO,
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_MS_WH_UP,       KC_MS_WH_RIGHT, KC_NO,      KC_MS_WH_LEFT,  KC_NO,      KC_NO,
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_NO
   )     ,
   [_CMD] = LAYOUT_split_3x6_3(
     LCTL(LGUI(KC_Q)),   KC_NO,        LSFT(LGUI(KC_Z)),   LGUI(KC_W),   LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,            KC_RPRN,        KC_NO,    KC_KB_MUTE,
-    LGUI(KC_TAB),       LGUI(KC_A),   KC_TAB,             LGUI(KC_F),   KC_ESC,         LSFT(LGUI(KC_V)),         KC_ASTR,      KC_BSPC,      LCTL(KC_Z),         KC_MINUS,       KC_COLN,  KC_KB_VOLUME_UP,
+    LGUI(KC_TAB),       LGUI(KC_A),   KC_TAB,             TO(_BASE),    KC_ESC,         LSFT(LGUI(KC_V)),         KC_ASTR,      KC_BSPC,      LCTL(KC_Z),         KC_MINUS,       KC_COLN,  KC_KB_VOLUME_UP,
     LSFT(KC_TAB),       LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),   LGUI(KC_C),     LGUI(KC_V),               KC_NO,        KC_LBRC,      KC_RBRC,            LSFT(KC_MINUS), KC_SCLN,  KC_KB_VOLUME_DOWN,
                                                           KC_NO,        KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
   ),
