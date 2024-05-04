@@ -30,10 +30,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_NO
   ),
   [_CMD] = LAYOUT_split_3x6_3(
-    LCTL(LGUI(KC_Q)),   KC_NO,        LSFT(LGUI(KC_Z)),   LGUI(KC_W),   LGUI(KC_R),     LGUI(KC_T),               KC_CIRC,      KC_AMPR,      KC_LPRN,            KC_RPRN,        KC_NO,    KC_NO,
-    LGUI(KC_TAB),       LGUI(KC_A),   KC_TAB,             TO(_BASE),    KC_ESC,         LSFT(LGUI(KC_V)),         KC_ASTR,      KC_BSPC,      LCTL(KC_Z),         KC_MINUS,       KC_COLN,  KC_RSFT,
-    LSFT(KC_TAB),       LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),   LGUI(KC_C),     LGUI(KC_V),               KC_NO,        KC_LBRC,      KC_RBRC,            LSFT(KC_MINUS), KC_SCLN,  KC_NO,
-                                                          KC_NO,        KC_NO,          KC_NO,                    KC_ENT,       MO(_NAV),     KC_NO
+    LCTL(LGUI(KC_Q)),   KC_NO,        LSFT(LGUI(KC_Z)),   LGUI(KC_W),   LGUI(KC_R),     LGUI(KC_T),     KC_CIRC,      KC_AMPR,      KC_LPRN,            KC_RPRN,        KC_NO,    KC_NO,
+    LGUI(KC_TAB),       LGUI(KC_A),   KC_TAB,             TO(_BASE),    KC_ESC,         LGUI(KC_F),     KC_ASTR,      KC_BSPC,      LCTL(KC_Z),         KC_MINUS,       KC_COLN,  KC_RSFT,
+    LSFT(KC_TAB),       LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),   LGUI(KC_C),     LGUI(KC_V),     KC_NO,        KC_LBRC,      KC_RBRC,            LSFT(KC_MINUS), KC_SCLN,  KC_NO,
+                                                          KC_NO,        KC_NO,          KC_NO,          KC_ENT,       MO(_NAV),     KC_NO
   ),
   [_NAV] = LAYOUT_split_3x6_3(
      KC_NO,             KC_NO,          KC_NO,              KC_LCBR,        KC_RCBR,    KC_NO,      LSFT(LGUI(KC_N)),   KC_NO,          KC_UP,      KC_EQUAL,     KC_NO,      KC_NO,
