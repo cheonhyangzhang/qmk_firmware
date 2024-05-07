@@ -24,9 +24,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             MO(_NUM),     KC_LSFT,      MO(_CMD),   KC_SPC, MO(_NAV),      KC_NO
   ),
   [_MOUSE] = LAYOUT_split_3x6_3(
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,             KC_NO,          KC_MS_UP,   KC_NO,          KC_NO,      KC_NO,
-      KC_NO,    KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_NO,       KC_MS_WH_DOWN,     KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,    KC_MS_BTN2, KC_NO,
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_MS_WH_UP,       KC_MS_WH_RIGHT, KC_NO,      KC_MS_WH_LEFT,  KC_NO,      KC_NO,
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,             KC_NO,          KC_MS_UP,       KC_NO,          KC_NO,      KC_NO,
+      KC_NO,    KC_NO,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_NO,       KC_MS_WH_DOWN,     KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_BTN2, KC_NO,
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_MS_WH_UP,       KC_MS_WH_RIGHT, KC_SPC,         KC_MS_WH_LEFT,  KC_NO,      KC_NO,
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_NO
   ),
   [_CMD] = LAYOUT_split_3x6_3(
