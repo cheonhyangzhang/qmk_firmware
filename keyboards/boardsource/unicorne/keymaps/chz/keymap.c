@@ -37,9 +37,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                                           KC_NO,        KC_NO,          KC_NO,          KC_ENT,             MO(_NAV),     KC_NO
   ),
   [_NAV] = LAYOUT_split_3x6_3(
-     KC_NO,             KC_NO,          KC_NO,              KC_LCBR,        KC_RCBR,    KC_NO,      LSFT(LGUI(KC_N)),   KC_NO,      KC_UP,      KC_EQUAL,     KC_NO,      KC_NO,
+     KC_NO,             KC_NO,          KC_NO,              KC_LCBR,        KC_RCBR,    KC_NO,      LGUI(KC_GRV),       KC_NO,      KC_UP,      KC_EQUAL,     KC_NO,      KC_NO,
      KC_NO,             LGUI(KC_1),     LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_DLR,     KC_PERC,    LSFT(LGUI(KC_C)),   KC_LEFT,    KC_DOWN,    KC_RGHT,      LGUI(KC_Y), LGUI(KC_BSPC),
-     LGUI(LSFT(KC_T)),  KC_EXLM,        KC_AT,              KC_HASH,        KC_TILD,    KC_GRV,     LGUI(KC_GRV),       TO(_MOUSE), KC_PIPE,    KC_SLASH,     KC_BSLS,    KC_NO,
+     LGUI(LSFT(KC_T)),  KC_EXLM,        KC_AT,              KC_HASH,        KC_TILD,    KC_GRV,     LSFT(LGUI(KC_N)),   TO(_MOUSE), KC_PIPE,    KC_SLASH,     KC_BSLS,    KC_NO,
                                                             KC_NO,          KC_LSFT,    MO(_CMD),   KC_NO,              KC_NO,      KC_NO
   ),
   [_NUM] = LAYOUT_split_3x6_3(
