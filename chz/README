@@ -1,0 +1,54 @@
+# Branch explained
+## master:
+Used to sync with original qmk repo, in order to get the latest and greatest of qmk.
+However this branch might conflict or incompatible with ch* branches and cause unwanted behaviors.
+## mainStable:
+Last compatible main branch. ch* branches are based on top of this branch.
+## chstable:
+Used to generate stable layout and keyboard firmware.
+## explore*:
+Branch used to try and test layout and config changes.
+
+# Important files
+## Corne lp
+keyboards/crkbd/keymaps/chz/config.h
+keyboards/crkbd/keymaps/chz/keymap.c
+keyboards/crkbd/keymaps/chz/rules.mk
+
+## Unicorne
+keyboards/boardsource/unicorne/config.h
+keyboards/boardsource/unicorne/info.json
+keyboards/boardsource/unicorne/keymaps/chz/config.h
+keyboards/boardsource/unicorne/keymaps/chz/keymap.c
+keyboards/boardsource/unicorne/keymaps/chz/rules.mk
+
+## Technikable
+keyboards/boardsource/technik_o/config.h
+keyboards/boardsource/technik_o/keymaps/chz/keymap.c
+keyboards/boardsource/technik_o/rules.mk
+
+# Command to compile
+
+```
+qmk compile  -kb crkbd -km chz
+```
+
+```
+qmk compile  -kb boardsource/technik_o -km chz
+```
+
+# When flash the corne lp with qmk tool, remember to flash both two splits to see the changes to take effect.
+
+```
+make boardsource/unicorne:chz
+```
+for corne lp aka crkbd and unicorne, use BOOT layer to trigger the boot mode.
+
+# heatmap
+https://precondition.github.io/qmk-heatmap
+This website is used to generate heatmap data
+
+```
+qmk console
+```
+can output the key usage data
