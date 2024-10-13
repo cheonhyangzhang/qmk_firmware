@@ -32,9 +32,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_NO
   ),
   [_ONEHAND] = LAYOUT_split_3x6_3(
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,      KC_NO,      KC_NO,      KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,      KC_UP,      KC_NO,      KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT,    KC_DOWN,    KC_RIGHT,   LGUI(KC_BSPC), KC_NO,
+    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,      KC_NO,      KC_NO,      KC_NO,          KC_NO,
+    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, LGUI(KC_U), KC_UP,      LGUI(KC_O), KC_NO,          KC_NO,
+    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT,    KC_DOWN,    KC_RIGHT,   LGUI(KC_BSPC),  KC_NO,
     KC_NO, KC_NO, KC_TRNS, KC_SPC, KC_TRNS, KC_NO
   ),
 
