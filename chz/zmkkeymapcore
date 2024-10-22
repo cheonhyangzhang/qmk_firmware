@@ -45,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                                           &none        &none          &none          &kp ENTER             &mo NAV_L     &none &mo BLUE_L
   ),
   [_NAV] = LAYOUT_split_3x6_3(
-     &none             &none          &none              &kp LBRC        &kp RBRC    &none      &kp LG(GRAVE)       &none      &kp UP      &kp EQUAL     &none      &none
+     &none             &none          &none              &kp LS(LC(TAB)) &kp LC(TAB)   &none      &kp LG(GRAVE)       &none      &kp UP      &kp EQUAL     &none      &none
      &none             &kp EXCL        &kp AT              &kp HASH        &kp DOLLAR     &kp PRCNT    &kp LS(LG(C))   &kp LEFT    &kp DOWN    &kp RIGHT      &kp LG(Y) &kp LG(BSPC)
-     &kp LG(LS(T))  &none          &kp LS(LC(TAB)) &kp LC(TAB)   &kp TILDE    &kp GRAVE     &kp LS(LG(N))   &kp BSLH    &none &kp SLASH     &none      &to OH_L
+     &kp LG(LS(T))  &none          &kp LBRC            &kp RBRC        &kp TILDE    &kp GRAVE     &kp LS(LG(N))   &kp BSLH    &none &kp SLASH     &none      &to OH_L
                                                             &none          &kp LSHFT    &mo CMD_L   &none              &none      &none &mo BLUE_L
   ),
   [_NUM] = LAYOUT_split_3x6_3(
