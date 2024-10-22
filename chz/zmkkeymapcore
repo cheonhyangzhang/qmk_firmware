@@ -1,3 +1,24 @@
+#ifdef CONSOLE_ENABLE
+#include "print.h"
+#endif
+
+#include QMK_KEYBOARD_H
+
+#include <stdio.h>
+enum layer_names {
+    _BASE,
+    _MOUSE,
+    _ONEHAND,
+    _CMD,
+    _NAV,
+    _NUM,
+    _WIN,
+    _BOOT,
+};
+
+// basic key mappings
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
+{
   [_BASE] = LAYOUT_split_3x6_3(
     &none      &none  &kp W           &kp E         &kp R         &kp T       &kp Y   &kp U          &kp I         &kp O           &none     &none
     &kp Q           &kp A   &ht_hp LALT S   &ht_hp LGUI D &ht_hp LCTRL F &kp G       &kp H   &ht_hp LCTRL J  &ht_hp LGUI K &ht_hp LALT L   &kp P      &kp RSHIFT
@@ -25,8 +46,8 @@
   ),
   [_NAV] = LAYOUT_split_3x6_3(
      &none             &none          &none              &kp LBRC        &kp RBRC    &none      &kp LG(GRAVE)       &none      &kp UP      &kp EQUAL     &none      &none
-     &none             &none          &kp LS(LC(TAB)) &kp LC(TAB)   &kp DOLLAR     &kp PRCNT    &kp LS(LG(C))   &kp LEFT    &kp DOWN    &kp RIGHT      &kp LG(Y) &kp LG(BSPC)
-     &kp LG(LS(T))  &kp EXCL        &kp AT              &kp HASH        &kp TILDE    &kp GRAVE     &kp LS(LG(N))   &kp BSLH    &none &kp SLASH     &none      &to OH_L
+     &none             &kp EXCL        &kp AT              &kp HASH        &kp DOLLAR     &kp PRCNT    &kp LS(LG(C))   &kp LEFT    &kp DOWN    &kp RIGHT      &kp LG(Y) &kp LG(BSPC)
+     &kp LG(LS(T))  &none          &kp LS(LC(TAB)) &kp LC(TAB)   &kp TILDE    &kp GRAVE     &kp LS(LG(N))   &kp BSLH    &none &kp SLASH     &none      &to OH_L
                                                             &none          &kp LSHFT    &mo CMD_L   &none              &none      &none &mo BLUE_L
   ),
   [_NUM] = LAYOUT_split_3x6_3(
@@ -47,4 +68,32 @@
     &none &none &none &none &none &none &none &none &none &none &none &none
     QK_BOOT, &none &none &none &none QK_BOOT
   ),
+};
 
+/*
+// this is to help print out the key pressed to generate heat map data
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    #ifdef CONSOLE_ENABLE
+        const bool is_combo = record->event.type == COMBO_EVENT;
+        uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
+             keycode,
+             is_combo ? 254 : record->event.key.row,
+             is_combo ? 254 : record->event.key.col,
+             get_highest_layer(layer_state),
+             record->event.pressed,
+             get_mods(),
+             get_oneshot_mods(),
+             record->tap.count
+             );
+    #endif
+    switch (keycode) {
+    //...
+    }
+    return true;
+}
+*/
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    state = update_tri_layer_state(state, _CMD, _NAV, _WIN);
+    return state;
+}

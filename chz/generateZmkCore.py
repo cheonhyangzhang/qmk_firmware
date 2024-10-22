@@ -169,7 +169,7 @@ def replace_keycodes(input_file, output_file, replacement_map):
         file.write(file_data)
 
 # Example usage
-input_file = 'qmkkeymapcore'  # Your input file
+input_file = 'keymap.c'  # Your input file
 output_file = 'zmkkeymapcore'  # Your output file
 
 replace_keycodes(input_file, output_file, replacement_map)
