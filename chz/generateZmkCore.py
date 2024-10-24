@@ -115,7 +115,7 @@ replacement_map = {
     'KC_7,': '&kp N7',
     'KC_8,': '&kp N8',
     'KC_9,': '&kp N9',
-    'LGUI(KC_LBRC),': '&kp LG(BSPC)',
+    'LGUI(KC_LBRC),': '&kp LG(LBRT)',
     'LCTL(LGUI(LSFT(KC_4))),': '&kp LC(LG(LS(N4)))',
     'LGUI(KC_RBRC),': '&kp LG(RBKT)',
     'LSFT(LGUI(KC_G)),': '&kp LS(LG(G))',
