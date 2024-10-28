@@ -1,6 +1,6 @@
 # Create a dictionary with the mapping
 replacement_map = {
-    'MO(_BOOT),': '&none',
+    'MO(_BOOT),': '&mo BOOT_L',
     'KC_NO,': '&none',
     'KC_A,': '&kp A',
     'KC_B,': '&kp B',
@@ -149,9 +149,9 @@ replacement_map = {
     'LCTL(LSFT(LALT(KC_4))),': '&kp LC(LS(LA(N4)))',
     'LALT(LSFT(KC_T)),': '&kp LA(LS(T))',
     'KC_TRNS,': '&trans',
-    '': '',
-    '': '',
-    '': '',
+    'LCTL(KC_LEFT),': '&kp LC(LEFT)',
+    'LCTL(KC_UP),': '&kp LC(UP)',
+    'LCTL(KC_RIGHT),': '&kp LC(RIGHT)',
 }
 
 # Function to perform replacements in the file
