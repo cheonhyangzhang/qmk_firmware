@@ -43,7 +43,6 @@ replacement_map = {
     'MO(_CMD),': '&mo CMD_L',
     'KC_SPC,': '&kp SPACE',
     'MO(_NAV),': '&mo NAV_L',
-    'KC_NO': '&none &mo BLUE_L',
     'LCTL(LGUI(KC_Q)),': '&kp LC(LG(Q))',
     'LSFT(LGUI(KC_Z)),': '&kp LG(LS(Z))',
     'LGUI(KC_W),': '&kp LG(W)',
@@ -152,6 +151,10 @@ replacement_map = {
     'LCTL(KC_LEFT),': '&kp LC(LEFT)',
     'LCTL(KC_UP),': '&kp LC(UP)',
     'LCTL(KC_RIGHT),': '&kp LC(RIGHT)',
+    'LAG_T(KC_NO),': '&kp LG(LALT)',
+    'LGUI(KC_1),': '&kp LG(N1)',
+    'LCTL(LSFT(KC_PGUP)),': '&kp LC(LS(PG_UP))',
+    'LCTL(LSFT(KC_PGDN)),': '&kp LC(LS(PG_DN))',
 }
 
 # Function to perform replacements in the file

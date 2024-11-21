@@ -20,9 +20,9 @@ enum layer_names {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
   [_BASE] = LAYOUT_split_3x6_3(
-    MO(_BOOT),      KC_NO,  KC_W,           KC_E,         KC_R,         KC_T,       KC_Y,   KC_U,          KC_I,         KC_O,           KC_NO,     MO(_BOOT),
-    KC_Q,           KC_A,   LALT_T(KC_S),   LGUI_T(KC_D), LCTL_T(KC_F), KC_G,       KC_H,   LCTL_T(KC_J),  LGUI_T(KC_K), LALT_T(KC_L),   KC_P,      KC_RSFT,
-    KC_CAPS_LOCK,   KC_Z,   KC_X,           KC_C,         KC_V,         KC_B,       KC_N,   KC_M,          KC_COMM,      KC_DOT,         KC_QUOT,   KC_NO,
+    MO(_BOOT),      LAG_T(KC_NO),   KC_W,           KC_E,         KC_R,         KC_T,       KC_Y,   KC_U,          KC_I,         KC_O,           KC_NO,     MO(_BOOT),
+    KC_Q,           KC_A,           LALT_T(KC_S),   LGUI_T(KC_D), LCTL_T(KC_F), KC_G,       KC_H,   LCTL_T(KC_J),  LGUI_T(KC_K), LALT_T(KC_L),   KC_P,      KC_RSFT,
+    KC_CAPS_LOCK,   KC_Z,           KC_X,           KC_C,         KC_V,         KC_B,       KC_N,   KC_M,          KC_COMM,      KC_DOT,         KC_QUOT,   KC_NO,
                                             MO(_NUM),     KC_LSFT,      MO(_CMD),   KC_SPC, MO(_NAV),      KC_NO
   ),
   [_MOUSE] = LAYOUT_split_3x6_3(
@@ -32,9 +32,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_NO
   ),
   [_ONEHAND] = LAYOUT_split_3x6_3(
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,      KC_NO,      KC_NO,      KC_NO,          KC_NO,
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, LGUI(KC_U), KC_UP,      LGUI(KC_O), KC_NO,          KC_NO,
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT,    KC_DOWN,    KC_RIGHT,   LGUI(KC_BSPC),  KC_NO,
+    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          KC_NO,      KC_NO,      KC_NO,          KC_NO,
+    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, LCTL(KC_LEFT),  KC_UP,      LCTL(KC_RIGHT), KC_NO,          KC_NO,
+    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT,        KC_DOWN,    KC_RIGHT,       LGUI(KC_BSPC),  KC_NO,
     KC_NO, KC_NO, KC_TRNS, KC_SPC, KC_TRNS, KC_NO
   ),
 
@@ -46,12 +46,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
   ),
   [_NAV] = LAYOUT_split_3x6_3(
      KC_NO,             KC_NO,              KC_NO,              KC_LCBR,        KC_RCBR,    KC_NO,              LGUI(KC_GRV),       KC_NO,      KC_UP,      KC_EQUAL,     KC_NO,      KC_NO,
-     KC_NO,             KC_NO,              LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_DLR,     KC_PERC,    LSFT(LGUI(KC_N)),   KC_LEFT,    KC_DOWN,    KC_RGHT,      LGUI(KC_Y), LGUI(KC_BSPC),
+     KC_NO,             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_DLR,     KC_PERC,    LSFT(LGUI(KC_N)),   KC_LEFT,    KC_DOWN,    KC_RGHT,      LGUI(KC_Y), LGUI(KC_BSPC),
      LGUI(LSFT(KC_T)),  KC_EXLM,            KC_AT,          KC_HASH,    KC_TILD,            KC_GRV,     LSFT(LGUI(KC_C)),   KC_BSLS,    TO(_MOUSE), KC_SLASH,     KC_NO,      TO(_ONEHAND),
                                                             KC_NO,          KC_LSFT,    MO(_CMD),   KC_NO,              KC_NO,      KC_NO
   ),
   [_NUM] = LAYOUT_split_3x6_3(
-      LGUI(KC_BSPC),  KC_NO,    KC_NO,          LGUI(LSFT(KC_5)),         KC_NO,          KC_NO,              KC_NO,          KC_7, KC_8,   KC_9, KC_NO,   KC_KB_MUTE,
+      LGUI(KC_BSPC),    KC_NO,          LCTL(LSFT(KC_PGUP)),      LGUI(LSFT(KC_5)),         LCTL(LSFT(KC_PGDN)),      KC_NO,              KC_NO,          KC_7, KC_8,   KC_9, KC_NO,   KC_KB_MUTE,
       KC_NO,  KC_NO,    LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  LSFT(LGUI(KC_G)),   KC_PGUP,        KC_4, KC_5,   KC_6, KC_DOT,  KC_KB_VOLUME_UP,
       KC_NO,  KC_NO,    KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,              KC_PGDN,        KC_1, KC_2,   KC_3, KC_NO,   KC_KB_VOLUME_DOWN,
                                         KC_NO,                    KC_NO,          KC_NO,              LSFT(KC_ENT),   KC_0, KC_NO
