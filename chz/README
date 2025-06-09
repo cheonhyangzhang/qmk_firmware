@@ -52,3 +52,7 @@ This website is used to generate heatmap data
 qmk console
 ```
 can output the key usage data
+
+go to webiste to generate the keyboard layout image
+
+https://config.qmk.fm/#/crkbd/rev1/LAYOUT_split_3x6_3
