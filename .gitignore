@@ -112,4 +112,4 @@ compile_commands.json
 via*.json
 /keyboards/**/keymaps/vial/*
 
-chz/chz-keyboard.json
+/chz/chz-keyboard.json
