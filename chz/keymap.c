@@ -21,8 +21,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
   [0] = LAYOUT_split_3x6_3(
     MO(7),      LAG_T(KC_NO),   KC_W,           KC_E,         KC_R,         KC_T,       KC_Y,   KC_U,          KC_I,         KC_O,           KC_NO,     MO(7),
-    KC_Q,           KC_A,           LALT_T(KC_S),   LGUI_T(KC_D), LCTL_T(KC_F), KC_G,       KC_H,   LCTL_T(KC_J),  LGUI_T(KC_K), LALT_T(KC_L),   KC_P,      KC_RSFT,
-    KC_CAPS_LOCK,   KC_Z,           KC_X,           KC_C,         KC_V,         KC_B,       KC_N,   KC_M,          KC_COMM,      KC_DOT,         KC_QUOT,   KC_NO,
+    KC_Q,           KC_A,           LALT_T(KC_S),   LGUI_T(KC_D), LCTL_T(KC_F), KC_G,       KC_H,   LCTL_T(KC_J),  LGUI_T(KC_K), LALT_T(KC_L),   KC_P,      KC_SCLN,
+    KC_CAPS_LOCK,   KC_Z,           KC_X,           KC_C,         KC_V,         KC_B,       KC_N,   KC_M,          KC_COMM,      KC_DOT,         KC_QUOT,   KC_RSFT,
                                     MO(5),     KC_LSFT,      MO(3),   KC_SPC, MO(4),      KC_NO
   ),
   [1] = LAYOUT_split_3x6_3(
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
   [3] = LAYOUT_split_3x6_3(
     LCTL(LGUI(KC_Q)),   KC_NO,        LSFT(LGUI(KC_Z)),   LGUI(KC_W),   LGUI(KC_R),     LGUI(KC_T),     KC_CIRC,            KC_AMPR,      KC_LPRN,            KC_RPRN,        KC_NO,    LCTL(KC_F8),
     LGUI(KC_TAB),       LGUI(KC_A),   KC_TAB,             TO(0),    KC_ESC,         LGUI(KC_F),     KC_ASTR,            KC_BSPC,      LCTL(KC_X),         KC_MINUS,       KC_COLN,  KC_RSFT,
-    LSFT(KC_TAB),       LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),   LGUI(KC_C),     LGUI(KC_V),     LALT(LGUI(KC_V)),   KC_LBRC,      KC_RBRC,            LSFT(KC_MINUS), KC_SCLN,  KC_NO,
+    LSFT(KC_TAB),       LGUI(KC_Z),   LGUI(KC_X),         LCTL(KC_C),   LGUI(KC_C),     LGUI(KC_V),     LALT(LGUI(KC_V)),   KC_LBRC,      KC_RBRC,            LSFT(KC_MINUS), KC_NO,  KC_NO,
                                                           KC_NO,        KC_NO,          KC_NO,          KC_ENT,             MO(4),     KC_NO
   ),
   [4] = LAYOUT_split_3x6_3(
