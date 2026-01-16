@@ -1,10 +1,7 @@
 # Branch explained
 ## master:
 Used to sync with original qmk repo, in order to get the latest and greatest of qmk.
-However this branch might conflict or incompatible with ch* branches and cause unwanted behaviors.
-## mainStable:
-Last compatible main branch. ch* branches are based on top of this branch.
-## chstable:
+## stable:
 Used to generate stable layout and keyboard firmware.
 ## dev:
 Branch used to try and test layout and config changes.
