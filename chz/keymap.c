@@ -29,13 +29,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
       KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,             KC_NO,          KC_NO,      KC_NO,          KC_NO,      KC_NO,
       KC_NO,    KC_NO,    KC_LALT,  KC_LGUI,  KC_LCTL,  KC_NO,       KC_MS_WH_DOWN,     KC_MS_WH_RIGHT, KC_MS_UP,   KC_MS_WH_LEFT,  KC_NO,      KC_NO,
       KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_MS_WH_UP,       KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,    KC_MS_BTN2, KC_SPC,
-                                    KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_NO
+                                    KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_ESC
   ),
   [2] = LAYOUT_split_3x6_3(
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          KC_NO,      KC_NO,      KC_NO,          KC_NO,
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, LCTL(KC_LEFT),  KC_UP,      LCTL(KC_RIGHT), KC_NO,          KC_NO,
-    KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_NO, LGUI(KC_Z), KC_LEFT,        KC_DOWN,    KC_RIGHT,       LGUI(KC_BSPC),  KC_NO,
-    KC_NO, KC_NO, KC_TRNS, KC_SPC, KC_TRNS, KC_NO
+    KC_NO, KC_NO, KC_NO,    KC_E, KC_NO, KC_NO, KC_NO, KC_NO,          KC_NO,      KC_NO,      KC_NO,          KC_NO,
+    KC_NO, KC_A, KC_TRNS,    KC_NO, KC_SPC, KC_BSPC, KC_NO, LCTL(KC_LEFT),  KC_UP,      LCTL(KC_RIGHT), KC_NO,          KC_NO,
+    KC_NO, KC_Z, LALT_T(KC_X),    KC_NO, KC_NO, KC_B, LGUI(KC_Z), KC_LEFT,        KC_DOWN,    KC_RIGHT,       LGUI(KC_BSPC),  KC_NO,
+    KC_NO, KC_NO, KC_TRNS, KC_SPC, KC_TRNS, KC_ESC
   ),
 
   [3] = LAYOUT_split_3x6_3(
@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
   ),
   [5] = LAYOUT_split_3x6_3(
       LGUI(KC_BSPC),    KC_NO,          LCTL(LSFT(KC_PGUP)),      LGUI(LSFT(KC_5)),         LCTL(LSFT(KC_PGDN)),      KC_NO,              KC_NO,          KC_7, KC_8,   KC_9, KC_NO,   KC_KB_MUTE,
-      KC_BRIGHTNESS_UP,  KC_NO,    LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  LSFT(LGUI(KC_G)),   KC_PGUP,        KC_4, KC_5,   KC_6, KC_DOT,  KC_KB_VOLUME_UP,
-      KC_BRIGHTNESS_DOWN,  KC_NO,    KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,              KC_PGDN,        KC_1, KC_2,   KC_3, KC_NO,   KC_KB_VOLUME_DOWN,
+      KC_NO,  KC_NO,    LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))),   LGUI(KC_RBRC),  LSFT(LGUI(KC_G)),   KC_PGUP,        KC_4, KC_5,   KC_6, KC_DOT,  KC_KB_VOLUME_UP,
+      TO(2),  KC_NO,    KC_NO,          LGUI(LSFT(KC_4)),         KC_NO,          KC_NO,              KC_PGDN,        KC_1, KC_2,   KC_3, KC_NO,   KC_KB_VOLUME_DOWN,
                                         KC_NO,                    KC_NO,          KC_NO,              LSFT(KC_ENT),   KC_0, KC_NO
   ),
   [6] = LAYOUT_split_3x6_3(
