@@ -31,8 +31,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
       KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_MS_WH_UP,       KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,    KC_MS_BTN2, KC_SPC,
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_MS_BTN1,        KC_TRNS,        KC_ESC
   ),
+  // left side is optimized for final cut pro
   [2] = LAYOUT_split_3x6_3(
-    KC_NO, KC_NO, KC_NO,    KC_E, KC_NO, KC_NO, KC_NO, KC_NO,          KC_NO,      KC_NO,      KC_NO,          KC_NO,
+    KC_NO, KC_NO, KC_NO,    KC_E, KC_NO, KC_NO, KC_NO, KC_F,          KC_NO,      KC_U,      KC_NO,          KC_NO,
     KC_NO, KC_A, KC_TRNS,    KC_NO, KC_SPC, KC_BSPC, KC_NO, LCTL(KC_LEFT),  KC_UP,      LCTL(KC_RIGHT), KC_NO,          KC_NO,
     KC_NO, KC_Z, LALT_T(KC_X),    KC_NO, KC_NO, KC_B, LGUI(KC_Z), KC_LEFT,        KC_DOWN,    KC_RIGHT,       LGUI(KC_BSPC),  KC_NO,
     KC_NO, KC_NO, KC_TRNS, KC_SPC, KC_TRNS, KC_ESC
@@ -45,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                                           KC_NO,        KC_NO,          KC_NO,          KC_ENT,             MO(4),     KC_NO
   ),
   [4] = LAYOUT_split_3x6_3(
-     LCTL(KC_F3),             KC_NO,              KC_NO,              KC_LCBR,        KC_RCBR,    KC_NO,              LGUI(KC_GRV),     LALT(LGUI(KC_Y)),   KC_UP,      KC_EQUAL,     KC_NO,      KC_NO,
+     LCTL(KC_F3),             KC_NO,              KC_NO,              KC_LCBR,        KC_RCBR,    KC_F6,              LGUI(KC_GRV),     LALT(LGUI(KC_Y)),   KC_UP,      KC_EQUAL,     KC_NO,      LCTL(KC_5),
      KC_NO,             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_DLR,     KC_PERC,    LSFT(LGUI(KC_C)),   KC_LEFT,    KC_DOWN,    KC_RGHT,      LGUI(KC_Y), LGUI(KC_BSPC),
      LGUI(LSFT(KC_T)),  KC_EXLM,            KC_AT,          KC_HASH,    KC_TILD,            KC_GRV,     LSFT(LGUI(KC_N)),   KC_BSLS,    TO(1), KC_SLASH,     KC_NO,      TO(2),
                                                             KC_NO,          KC_LSFT,    MO(3),   KC_NO,              KC_NO,      KC_NO
