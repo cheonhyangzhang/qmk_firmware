@@ -46,9 +46,74 @@ https://precondition.github.io/qmk-heatmap
 This website is used to generate heatmap data
 
 ```
+qmk info -m -kb crkbd/rev1 -km chz
+```
+to show the printed copyable keymap
+
+e.g
+```
+Matrix for "LAYOUT_split_3x6_3":
+            ┌──┐                            ┌──┐
+┌──┐┌──┐┌──┐│0D│┌──┐┌──┐            ┌──┐┌──┐│4D│┌──┐┌──┐┌──┐
+│0A││0B││0C│└──┘│0E││0F│            │4F││4E│└──┘│4C││4B││4A│
+└──┘└──┘└──┘┌──┐└──┘└──┘            └──┘└──┘┌──┐└──┘└──┘└──┘
+┌──┐┌──┐┌──┐│1D│┌──┐┌──┐            ┌──┐┌──┐│5D│┌──┐┌──┐┌──┐
+│1A││1B││1C│└──┘│1E││1F│            │5F││5E│└──┘│5C││5B││5A│
+└──┘└──┘└──┘┌──┐└──┘└──┘            └──┘└──┘┌──┐└──┘└──┘└──┘
+┌──┐┌──┐┌──┐│2D│┌──┐┌──┐            ┌──┐┌──┐│6D│┌──┐┌──┐┌──┐
+│2A││2B││2C│└──┘│2E││2F│            │6F││6E│└──┘│6C││6B││6A│
+└──┘└──┘└──┘    └──┘└──┘            └──┘└──┘    └──┘└──┘└──┘
+                        ┌──┐    ┌──┐
+                        │3F│    │7F│
+                ┌──┐┌──┐│  │    │  │┌──┐┌──┐
+                │3D││3E││  │    │  ││7E││7D│
+                └──┘└──┘└──┘    └──┘└──┘└──┘
+```
+in file `qmk_firmware/keyboards/crkbd/keymaps/chz/rules.mk`, add line
+
+```
+CONSOLE_ENABLE = yes
+```
+
+in file `qmk_firmware/keyboards/crkbd/keymaps/chz/keymap.c`
+add below function
+```
+#ifdef CONSOLE_ENABLE
+#include "print.h"
+#endif
+// this is to help print out the key pressed to generate heat map data
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    #ifdef CONSOLE_ENABLE
+        const bool is_combo = record->event.type == COMBO_EVENT;
+        uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
+             keycode,
+             is_combo ? 254 : record->event.key.row,
+             is_combo ? 254 : record->event.key.col,
+             get_highest_layer(layer_state),
+             record->event.pressed,
+             get_mods(),
+             get_oneshot_mods(),
+             record->tap.count
+             );
+    #endif
+    switch (keycode) {
+    //...
+    }
+    return true;
+}
+```
+
+
+```
 qmk console
 ```
 can output the key usage data
+
+```
+qmk console | sed -n 's/^foostan:Corne:1: //p' >> filename
+```
+to log the key usage
+
 
 go to webiste to generate the keyboard layout image
 
