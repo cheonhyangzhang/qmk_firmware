@@ -19,6 +19,8 @@ keyboards/boardsource/unicorne/keymaps/chz/config.h
 keyboards/boardsource/unicorne/keymaps/chz/keymap.c
 keyboards/boardsource/unicorne/keymaps/chz/rules.mk
 
+the plates used is unicorne plate standard version
+
 ## Technikable
 keyboards/boardsource/technik_o/config.h
 keyboards/boardsource/technik_o/keymaps/chz/keymap.c
@@ -40,6 +42,8 @@ qmk compile  -kb boardsource/technik_o -km chz
 make boardsource/unicorne:chz
 ```
 for corne lp aka crkbd and unicorne, use BOOT layer to trigger the boot mode.
+the default BOOT trigger is to push the pcb controller area button, hold one button first, then click on the other
+button. Likely hold outside one and inside one.
 
 # heatmap
 https://precondition.github.io/qmk-heatmap

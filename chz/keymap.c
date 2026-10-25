@@ -34,8 +34,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
   // left side is optimized for final cut pro
   [2] = LAYOUT_split_3x6_3(
     KC_NO, KC_NO, KC_I,    KC_E, KC_O, KC_NO, KC_NO, KC_F,          KC_NO,      KC_U,      KC_NO,          KC_NO,
-    KC_NO, KC_A, KC_TRNS,    KC_NO, KC_SPC, KC_BSPC, KC_NO, LCTL(KC_LEFT),  KC_UP,      LCTL(KC_RIGHT), KC_NO,          KC_NO,
-    KC_NO, KC_Z, LALT_T(KC_X),    KC_NO, KC_NO, KC_B, LGUI(KC_Z), KC_LEFT,        KC_DOWN,    KC_RIGHT,       LGUI(KC_BSPC),  KC_NO,
+    KC_NO, KC_A, KC_TRNS,    KC_L, KC_SPC, KC_BSPC, KC_NO, LCTL(KC_LEFT),  KC_UP,      LCTL(KC_RIGHT), KC_NO,          KC_NO,
+    KC_NO, KC_Z, LALT_T(KC_X),    KC_U, KC_F, KC_B, LGUI(KC_Z), KC_LEFT,        KC_DOWN,    KC_RIGHT,       LGUI(KC_BSPC),  KC_NO,
     KC_NO, KC_NO, KC_TRNS, KC_SPC, KC_TRNS, KC_ESC
   ),
 
